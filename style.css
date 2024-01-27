@@ -752,13 +752,13 @@ th{
     }
 
     .main-content{
-        left: 0;
+        position: relative;
         width: 100%;
         padding: 1rem;
     }
 
     .card-container{
-        grid-template-columns: 90%;
+        grid-template-columns: 87%;
     }
 
     .card-container-2{
