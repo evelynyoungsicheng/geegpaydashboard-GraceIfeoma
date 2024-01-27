@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/phosphor-icons/src/css/icons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/duotone/style.css"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GeegPay Dashboard Challenge</title>
+</head>
+<body class="dark">
+    <div class="sidebar">
+        <div class="top">
+            <div class="logo">
+                <img src="img/logo.svg" alt="logo">
+            </div>
+
+            <ul>
+                
+                <li>
+                    <a href="index.html" class="light">
+                        <i class="ph-fill ph-house"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="ph-duotone ph-chart-line"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="ph-duotone ph-users"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="ph-duotone ph-cube"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="ph-duotone ph-tag"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="ph-duotone ph-info"></i>
+                    </a>
+                </li>
+                <li class="mode">
+                <div class="switchmode">
+                <span class="switch" onclick="myFunction()"> 
+                    <i class="ph-duotone ph-moon"></i>
+                    <i class="ph-duotone ph-sun ph-lg"></i>
+                </span>
+
+                </div>
+                </li>
+
+                <div class="bottom">
+                <li>
+                    <a href="#">
+                        <i class="ph ph-arrow-circle-right"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="ph-duotone ph-gear"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="ph-duotone ph-sign-out"></i>
+                    </a>
+                </li>
+                </div>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="header">
+                <h1>Dashboard</h4>
+                    <div class="search-container">
+                    
+                        <input type="text" placeholder="Search..." name="search" >
+                        <button class="search-icon"><i class="ph ph-magnifying-glass ph-lg"></i></button>
+
+                    </div>
+
+                    <div class="date">
+                        <i class="ph ph-calendar-blank"></i>
+                        <p class="date-text">November 15,2023</p>
+                    </div>
+
+                    <div class="notification-icon">
+                        <i class="ph ph-bell "></i>
+                    </div>
+                    
+                    <div class="profile">
+                        <div class="profile-icon">
+                           <img class="profile-pic" src="img/me.jpg">
+                        </div>
+                        <div class="user-text">
+                                <p class="user-head-text">Ifeoma Ifechukwu</p>
+                                <p class="user-subtext">ifeomaifechukwu@gmail.com</p>
+                        </div>
+                        <div class="drop-down">
+                            <i class="ph-duotone ph-caret-circle-down ph-lg"></i>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="card-container">
+            <div class="card-container-1">
+                <div class="card1-header">
+                <h4>Sales Trends</h4>
+                
+                <div class="side-sort">
+                <p class="sub">Sort by:</p>
+
+                    <div class="drop-down-selection">
+                        <p class="label">Weekly</p>
+                        <i class="ph-duotone ph-caret-circle-down"></i>
+                    </div>
+                </div>
+                </div>
+
+                    <div id="main" class="resize" ></div>
+            </div>
+
+            <div class="card-container-2">
+                <div class="card-sec">
+                    <div class="sec-icon"> <i class="ph-duotone ph-cube"></i> <img src="img/chart-line.png" alt="chartset"></div>
+                    <h3>Total Order</h4>
+                    <h1>350</h1>
+                    <div class="insight">
+                        <span class="percent">23.5%</span>
+                        <span class="supporting-text">vs. previous month</span>
+                    </div>
+
+                </div>
+
+                <div class="card-sec">
+                    <div class="sec-icon"><i class="ph-duotone ph-bounding-box"></i><img src="img/red-chart-line.png" alt="chartset"> </div>
+                    <h3>Total Refund</h4>
+                    <h1>270</h1>
+                    <div class="insight">
+                        <span class="percent">-24%.0</span>
+                        <span class="supporting-text">vs. previous month</span>
+                    </div>
+
+                </div>
+
+                <div class="card-sec">
+                    <div class="sec-icon"><i class="ph-duotone ph-shopping-cart"></i> <img src="img/red-chart-line.png" alt="chartset"></div>
+                    <h3>Average Sales</h4>
+                    <h1>1567</h1>
+                    <div class="insight">
+                        <span class="percent">-10.2%</span>
+                        <span class="supporting-text">vs. previous month</span>
+                    </div>
+
+                </div>
+
+                <div class="card-sec">
+                    <div class="sec-icon"><i class="ph-duotone ph-coins"></i><img src="img/chart-line.png" alt="chartset"></div>
+                    <h3>Total Income</h4>
+                    <h1>$350.000</h1>
+                    <div class="insight">
+                        <span class="percent">11.8%</span>
+                        <span class="supporting-text">vs. previous month</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card-container-3">
+                <div class="container-3-header">
+                    <h4>Last Orders</h4>
+                    <h5>See All</h5>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Invoice</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td><img class="profile-pic" src="img/me.jpg" alt="profile-pic">Marcus Begson</td>
+                            <td>Nov 15, 2023</td>
+                            <td>$80,000</td>
+                            <td>Paid</td>
+                            <td class="invoice-sec"><i class="ph-duotone ph-file-arrow-down"></i>View</td>
+                        </tr>
+
+                        <tr>
+                            <td><img class="profile-pic" src="img/me.jpg" alt="profile-pic"> Jayden Vacarro</td>
+                            <td>Nov 15, 2023</td>
+                            <td>$150,000</td>
+                            <td>Refund</td>
+                            <td class="invoice-sec"><i class="ph-duotone ph-file-arrow-down"></i>View</td>
+                        </tr>
+
+                        <tr>
+                            <td><img class="profile-pic" src="img/me.jpg" alt="profile-pic"> Corey Schleifer</td>
+                            <td>Nov 14, 2023</td>
+                            <td>$87,000</td>
+                            <td>Paid</td>
+                            <td class="invoice-sec"><i class="ph-duotone ph-file-arrow-down"></i>View</td>
+                        </tr>
+
+                        <tr>
+                            <td><img class="profile-pic" src="img/me.jpg" alt="profile-pic"> Cooper Press</td>
+                            <td>Nov 14, 2023</td>
+                            <td>$100,000</td>
+                            <td>Refund</td>
+                            <td class="invoice-sec"><i class="ph-duotone ph-file-arrow-down"></i>View</td>
+                        </tr>
+
+                        <tr>
+                            <td><img class="profile-pic" src="img/me.jpg" alt="profile-pic"> Phillip Lubin</td>
+                            <td>Nov 13, 2023</td>
+                            <td>$78,000</td>
+                            <td>Paid</td>
+                            <td class="invoice-sec"><i class="ph-duotone ph-file-arrow-down"></i>View</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-container-4">
+                <div class="container-4-header">
+                    <h4>Top Platform</h4>
+                    <h5>See All</h5>
+                </div>
+
+                <div class="container-4-body">
+                    <div class="con4-subbody">
+                        <div class="subbody-1">
+                            <h4>Book Bazaar</h4>
+                            <div class="progress-bar">
+                                <div class="progress length1"></div>
+                                
+                            </div>
+                            <div class="after-progress-bar">
+                                <p>$2,500,000</p>
+                                <p>+60%</p>
+                            </div>
+                        </div>
+
+                        <div class="subbody-2">
+                            <h4>Artisan Aisle</h4>
+                            <div class="progress-bar">
+                                <div class="progress length2"></div>
+                                
+                            </div>
+                            <div class="after-progress-bar">
+                                <p>$1,800,000</p>
+                                <p>+45%</p>
+                            </div>
+                        </div>
+
+                        <div class="subbody-3">
+                            <h4>Toy Troop</h4>
+                            <div class="progress-bar">
+                                <div class="progress length3"></div>
+                                
+                            </div>
+                            <div class="after-progress-bar">
+                                <p>$1,200,000</p>
+                                <p>+35%</p>
+                            </div>
+                        </div>
+
+                        <div class="subbody-4">
+                            <h4>X-Store</h4>
+                            <div class="progress-bar">
+                                <div class="progress length4"></div>
+                                
+                            </div>
+                            <div class="after-progress-bar">
+                                <p>$1,000,000</p>
+                                <p>+25%</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script src="toggle.js"></script>
+
+<script src="index.js"></script>
+
+
+</html>
