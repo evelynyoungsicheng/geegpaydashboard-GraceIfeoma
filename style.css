@@ -724,10 +724,6 @@ th{
         width: 100%;
     }
 
-    .sidebar{
-        display: none;
-    }
-
     .header{
         display: flex;
         gap: 2.6em;
