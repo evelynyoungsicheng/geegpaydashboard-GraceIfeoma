@@ -758,7 +758,7 @@ th{
     }
 
     .card-container{
-        grid-template-columns: 100%;
+        grid-template-columns: 90%;
     }
 
     .card-container-2{
